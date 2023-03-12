@@ -20,37 +20,6 @@
  
 
 / { 
-    combos {
-        compatible = "zmk,combos";
-        combo_sys {
-            timeout-ms = <30>;
-        key-positions = <3 4 5>;
-            bindings = <&to SYS>;
-        };
-        combo_caps {
-            timeout-ms = <30>;
-        key-positions = <10 11 12>;
-            bindings = <&caps_word>;
-        };
-        combo_num {
-            timeout-ms = <30>;
-            key-positions = <0 1 2>;
-            bindings = <&to NUM>;
-            layers = <AL1>;
-        };
-        combo_fun  {
-            timeout-ms = <10>;
-            key-positions = <7 8>;
-            bindings = <&to FUN>;
-        layers = <AL1>;
-        };
-        lalt {
-            timeout-ms = <20>;
-        key-positions = <8 9>;
-            bindings = <&kp LALT>; 
-        layers = <SYS>;
-        };
-    };
 
     behaviors {
         hm_l: homerow_mods_left {
