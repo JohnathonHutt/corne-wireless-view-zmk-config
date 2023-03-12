@@ -13,11 +13,47 @@
     tapping-term-ms = <251>;
     flavor = "tap-preferred";
  };
+&sk {
+     release-after-ms = <2000>;
+     quick-release;
+ };
+ 
 
+/ { 
+    combos {
+        compatible = "zmk,combos";
+        combo_sys {
+            timeout-ms = <30>;
+        key-positions = <3 4 5>;
+            bindings = <&to SYS>;
+        };
+        combo_caps {
+            timeout-ms = <30>;
+        key-positions = <10 11 12>;
+            bindings = <&caps_word>;
+        };
+        combo_num {
+            timeout-ms = <30>;
+            key-positions = <0 1 2>;
+            bindings = <&to NUM>;
+            layers = <AL1>;
+        };
+        combo_fun  {
+            timeout-ms = <10>;
+            key-positions = <7 8>;
+            bindings = <&to FUN>;
+        layers = <AL1>;
+        };
+        lalt {
+            timeout-ms = <20>;
+        key-positions = <8 9>;
+            bindings = <&kp LALT>; 
+        layers = <SYS>;
+        };
+    };
 
-/ {
-        behaviors {
-            hm_l: homerow_mods_left {
+    behaviors {
+        hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_L";
             #binding-cells = <2>;
@@ -26,12 +62,71 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <3 4 5 10 11 12 13 14>; // right hand
-            };
         };
-                
-        keymap {
-                compatible = "zmk,keymap";
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 6 7 8 9>; // left hand
+        };
+        sr: shift_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&to>;
+            retro-tap;
+        };
+        hl_l: homerow_layers_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_LAYERS_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+            hold-trigger-key-positions = <3 4 5 10 11 12 13 14>; // right hand
+        };
+        hl_r: homerow_layers_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_LAYERS_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 6 7 8 9>; // left hand
+        };
+    td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    shrep: shift_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_REPEAT";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&key_repeat>;
+        };
+    };
 
+       keymap {
+                compatible = "zmk,keymap";
+                
+                
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
@@ -45,6 +140,7 @@
                   &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
                         >;
                 };
+                
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -58,7 +154,7 @@
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
-
+                
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -73,4 +169,5 @@
                         >;
                 };
         };
+    };
 };
