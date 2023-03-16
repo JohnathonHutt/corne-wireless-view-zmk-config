@@ -43,17 +43,17 @@
 
          system {
                         bindings = <
-   &kp TAB  &kp ESCAPE  &kp TAB &none &none &none                                              &none &none &none &none &kp DEL BSPC
+   &kp TAB  &kp ESCAPE  &kp TAB &none &none &none                                              &none &none &none &none &kp DEL &kp BSPC
    &kp LCTRL &sk LEFT_SHIFT &sk LEFT_CONTROL &sk LEFT_ALT &sk LEFT_GUI   &none                 &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp BACKSPACE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp LSHFT &trans   &trans &trans   &trans   &trans                                          &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
+                    	     &kp LGUI &trans &kp SPACE                                         &kp RET   &trans    &kp RALT
                         >;
                 };
         };
         
          numbers {
                         bindings = <
-   &kp TAB &kp NUMBER_7 &kp NUMBER_5 &kp NUMBER_3 &kp NUMBER_1 &kp NUMBER_9                    &kp NUMBER_8 &kp NUMBER_0 &kp NUMBER_2 &kp NUMBER_4 &kp NUMBER_6 BSPC
+   &kp TAB &kp NUMBER_7 &kp NUMBER_5 &kp NUMBER_3 &kp NUMBER_1 &kp NUMBER_9                    &kp NUMBER_8 &kp NUMBER_0 &kp NUMBER_2 &kp NUMBER_4 &kp NUMBER_6 &kp BSPC
    &kp LCTRL &sk LEFT_SHIFT &sk LEFT_CONTROL &sk LEFT_ALT &sk LEFT_GUI &none                   &kp F10 &sk RIGHT_GUI &sk RIGHT_ALT &sk RIGHT_CONTROL &sk RIGHT_SHIFT &kp BACKSPACE
    &kp LSHFT &kp F7 &kp F5 &kp F3 &kp F1 &kp F9                                                &kp F8 &kp F12 &kp F2 &kp F4 &kp F6 &kp TILDE
                     &kp LGUI &trans   &kp SPACE                                                &kp RET &trans &kp RALT
