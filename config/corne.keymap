@@ -8,6 +8,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define colemak_dh 0
+#define symbols 1
+#define system 2
+#define numbers 3
+
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <260>;
@@ -28,11 +33,11 @@
     keymap {
          compatible = "zmk,keymap";
 
-         default_layer {
+         colemak_dh {
                         bindings = <
    &kp ESC   &kp Q   &kp W  &kp F  &kp P  &kp B                                                 &kp J  &kp L  &kp U   &kp Y  &kp SEMICOLON  &kp BSPC
    &bt BT_CLR &mt LEFT_SHIFT A  &mt LCTRL R  &mt LEFT_ALT S  &mt LEFT_COMMAND T  &kp G          &kp M  &mt RCMD N  &mt RIGHT_ALT E  &mt RIGHT_CONTROL I  &mt RIGHT_SHIFT O &kp SQT
-   &bt BT_NXT &kp Z  &kp X  &kp C  &kp D  &kp V                                                 &kp K  &kp H  &kp COMMA  &kp DOT  &kp SINGLE_QUOTE &kp ESC
+   &bt BT_NXT &kp Z  &lt 3 X  &lt 2 C  &lt 1 D  &kp V                                           &kp K  &lt 1 H  &lt 2 COMMA  &lt 3 DOT  &kp SINGLE_QUOTE &kp ESC
    &kp LGUI &mt LC(LS(LALT)) SPC  &kp LSHIFT                                                    &kp RET &kp BSPC &kp RALT
                         >;
                 };
