@@ -54,7 +54,6 @@
    &kp LGUI &mt LC(LS(LALT)) SPC  &kp LSHIFT                                                   &kp RET &kp BSPC &kp RALT
                         >;
                 };
-        };
         
          numbers {
                         bindings = <
