@@ -32,6 +32,31 @@
             bindings = <&kp ESC>;
         };
     };
+
+        macros {
+        ws_find: ws_find {
+            compatible = "zmk,behavior-macro";
+            label = "ws_find_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LEFT_SHIFT &kp LEFT_SHIFT>;
+        };
+        prettier: prettier {
+            compatible = "zmk,behavior-macro";
+            label = "prettier_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL &kp LEFT_ALT &kp O>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_ALT &kp O>,
+                <&macro_press>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp LEFT_ALT &kp P>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp LEFT_ALT &kp P>;
+        };
+        };
    
     
     keymap {
