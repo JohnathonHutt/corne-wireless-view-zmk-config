@@ -43,12 +43,6 @@
             bindings = <&to NUM>;
             layers = <AL1>;
         };
-        combo_fun  {
-            timeout-ms = <10>;
-            key-positions = <7 8>;
-            bindings = <&to FUN>;
-            layers = <AL1>;
-        };
         lalt {
             timeout-ms = <20>;
             key-positions = <8 9>;
@@ -200,38 +194,42 @@
                 };
         
          SM2 {
+         label = "Punct";
                         bindings = <
-   &none  &kp ESC    &mt LCTL L   &mt LALT G  &mt LGUI D  &none                                 &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
-   &none  &lt NUM A  &lt SM2 R    &lt SM1 S   &lt SYS T   &none                                 &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
+   &none  &kp ESC    &kp ATSN    &kp QMARK   &prettier    &none                                 &none   &kp LPRN    &kp RPRN  &kp LS(MINUS)  &kp BSPC   &none
+   &none  &kp SEMI    &kp PRCNT   &kp EXCL     &ws_find   &none                                 &none   kp LBRC    &kp RBRC    &kp AMPS    &kp COLON    &none
    &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none
-   &none  &mt LC(LS(LALT)) SPC  &sk LSHIFT                                                      &kp RET &kp BSPC &none
+   &none  &trans  &trans                                                                        &trans &trans &none
                         >;
                 };
                 
          NUM {
+         label = "Num";
                         bindings = <
-   &none  &kp ESC    &mt LCTL L   &mt LALT G  &mt LGUI D  &none                                 &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
-   &none  &lt NUM A  &lt SM2 R    &lt SM1 S   &lt SYS T   &none                                 &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
-   &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none
-   &none  &mt LC(LS(LALT)) SPC  &sk LSHIFT                                                      &kp RET &kp BSPC &none
+   &none  &kp ESC  &hm_l LCTL DOT &hm_l LALT N0   &hm_l LGUI N1  &none                           &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
+   &none  &td SLASH MINUS   &td STAR PLUS       &kp    &kp N6t   &none                           &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
+   &none  &none   &none   &none   &none   &none                                                  &none   &none   &none   &none  &none  &none
+   &none  &sr LSHIFT AL1  &bt BT_CLR                                                             &bt BT_NXT &kp RGUI &none
                         >;
                 };
 
          SYS {
+         label = "Nav";
                         bindings = <
-   &none  &kp ESC    &mt LCTL L   &mt LALT G  &mt LGUI D  &none                                 &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
-   &none  &lt NUM A  &lt SM2 R    &lt SM1 S   &lt SYS T   &none                                 &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
-   &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none
-   &none  &mt LC(LS(LALT)) SPC  &sk LSHIFT                                                      &kp RET &kp BSPC &none
+   &none  &kp ESC &kp ESC &kp LG(LS(LBKT)) &kp LG(LS(RBKT))  &none                                 &none   &mt LG(V) LG(C)  &kp UP    &kp BKSP  &kp BSPC   &none
+   &none  td LG(GRAVE) TAB   &kp DEL &kp LG(LBKT) &kp LG(RBKT)  &none                              &none   &kp LEFT         &kp DOWN  &kp RIGHT   &kp RET  &none
+   &none  &none   &none   &none   &none   &none                                                    &none   &none   &none   &none  &none  &none
+   &none  &sr LSHIFT AL1      &kp LALT                                                             &kp LSHIFT  &kp RGUI &none
                         >;
                 };
 
         AL2U {
+        label = "Al2Caps";
                         bindings = <
-   &none  &kp ESC    &mt LCTL L   &mt LALT G  &mt LGUI D  &none                                 &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
-   &none  &lt NUM A  &lt SM2 R    &lt SM1 S   &lt SYS T   &none                                 &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
+   &none  &kp ESC  &kp LS(V) &kp LS(W) &kp LS(P)  &none                                         &none   &kp LS(M)   &kp LS(J)    &kp LS(F)   &kp BSPC   &none
+   &none  &kp LS(Q)   &kp LS(Z)   &kp LS(X)   &kp LS(B)   &none                                 &none   &kp LS(K)   &kp DQT      &kp LS(Y)   &kp COMMA  &none
    &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none
-   &none  &mt LC(LS(LALT)) SPC  &sk LSHIFT                                                      &kp RET &kp BSPC &none
+   &none  &trans  &trans                                                                        &trans &out OUT_TOG &none
                         >;
                 };
         };
