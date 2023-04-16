@@ -170,29 +170,32 @@
          compatible = "zmk,keymap";
 
          AL1 {
+         label = "Base";
                         bindings = <
-   &none  &kp ESC    &mt LCTL L   &mt LALT G  &mt LGUI D  &none                                 &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
-   &none  &lt NUM A  &lt SM2 R    &lt SM1 S   &lt SYS T   &none                                 &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
+   &none  &kp ESC  &hm_l LCTL L &hm_l LALT G &hm_l LGUI D  &none                                &none   &hm_r RGUI H  &hm_r LALT U  &hm_r RCTL C  &kp BSPC  &none
+   &none  &hl_l NUM A  &hl_l SM2 R  &hl_l SM1 S  &hl_l SYS T  &none                             &none   &hl_r SYS N  &hl_r SM1 E  &hl_r SM2 I  &hl_r NUM O  &none
    &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none 
-   &none  &mt LC(LS(LALT)) SPC  &sk LSHIFT                                                      &kp RET &kp BSPC &none 
-                        >;
-                };
-                
-         AL2 {
-                        bindings = <
-   &none  &kp ESC    &mt LCTL L   &mt LALT G  &mt LGUI D  &none                                 &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
-   &none  &lt NUM A  &lt SM2 R    &lt SM1 S   &lt SYS T   &none                                 &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
-   &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none
-   &none  &mt LC(LS(LALT)) SPC  &sk LSHIFT                                                      &kp RET &kp BSPC &none
+   &none  &mt LC(LS(LALT)) SPC  &shrep LSHIFT 0                                                 &caps_alpha2macro  &alpha2macro &none
                         >;
                 };
 
+          AL2 {
+          label = "Al2";
+                         bindings = <
+    &none  &kp ESC  &kp V  &kp W   &kp P   &none                                 &none   &kp M   &kp J   &kp F &kp BSPC   &none
+    &none  &kp Q  &kp Z &kp X     &kp B    &none                                 &none   &kp K   &kp SQT &kp Y   &kp DOT  &none
+    &none  &none   &none   &none   &none   &none                                 &none   &none   &none   &none  &none  &none
+    &none  &sr LSHIFT AL1      &none                                             &none    &sl AL2U  &none
+                         >;
+               };
+                
          SM1 {
+         label = "Code";
                         bindings = <
-   &none  &kp ESC    &mt LCTL L   &mt LALT G  &mt LGUI D  &none                                 &none   &mt RGUI H  &mt LALT U   &mt RCTL C  &kp BSPC   &none
-   &none  &lt NUM A  &lt SM2 R    &lt SM1 S   &lt SYS T   &none                                 &none   &lt SYS N   &lt SM1 E    &lt SM2 I   &lt NUM O  &none
-   &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none
-   &none  &mt LC(LS(LALT)) SPC  &sk LSHIFT                                                      &kp RET &kp BSPC &none
+   &none  &kp ESC   &kp STAR     &kp LS(N3)  &kp DLLR  &none                                 &none   &kp LS(COMMA)  &kp LS(DOT)  &kp MINUS  &kp BSPC   &none
+   &none  &kp BSLH   &kp GRAVE    &kp TILDE   &kp CARET  &none                               &none   &kp LBKT       &kp RBKT     &kp PIPE   &kp SLASH  &none
+   &none  &none   &none   &none   &none   &none                                              &none   &none          &none        &none      &none      &none
+   &none  &trans      &trans                                                                 &trans  &trans  &none
                         >;
                 };
         
