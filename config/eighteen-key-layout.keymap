@@ -34,7 +34,29 @@
         };
     };
 
-    behaviors {};
+    behaviors {
+            shrep: shift_repeat {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "SHIFT_REPEAT";
+                    #binding-cells = <2>;
+                    flavor = "hold-preferred";
+                    tapping-term-ms = <400>;
+                    quick-tap-ms = <200>;
+                    bindings = <&kp>, <&key_repeat>;
+                };
+            alpha2macro: behavior_macro_1 {
+                compatible = "zmk,behavior-macro";
+                label = "MACRO1";
+                #binding-cells = <0>;
+                bindings = < &sl AL2 >;
+            };
+            caps_alpha2macro: behavior_macro_2 {
+                compatible = "zmk,behavior-macro";
+                label = "MACRO2";
+                #binding-cells = <0>;
+                bindings = < &sl AL2U >;
+            };
+    };
 
     macros {
         ws_find: ws_find {
