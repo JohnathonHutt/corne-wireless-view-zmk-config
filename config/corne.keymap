@@ -31,7 +31,7 @@
         };
     };
 
-    combos {};
+    behaviors {};
     
     keymap {
          compatible = "zmk,keymap";
