@@ -197,7 +197,7 @@
          label = "Punct";
                         bindings = <
    &none  &kp ESC    &kp ATSN    &kp QMARK   &prettier    &none                                 &none   &kp LPRN    &kp RPRN  &kp LS(MINUS)  &kp BSPC   &none
-   &none  &kp SEMI    &kp PRCNT   &kp EXCL     &ws_find   &none                                 &none   kp LBRC    &kp RBRC    &kp AMPS    &kp COLON    &none
+   &none  &kp SEMI    &kp PRCNT   &kp EXCL     &ws_find   &none                                 &none   &kp LBRC    &kp RBRC    &kp AMPS    &kp COLON    &none
    &none  &none   &none   &none   &none   &none                                                 &none   &none   &none   &none  &none  &none
    &none  &trans  &trans                                                                        &trans &trans &none
                         >;
