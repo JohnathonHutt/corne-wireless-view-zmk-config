@@ -19,9 +19,13 @@
 #define AL2U 6
 
 &mt {
+    tapping-term-ms = <251>;
     flavor = "tap-preferred";
-    tapping_term_ms = <200>;
-};
+ };
+&sk {
+     release-after-ms = <2000>;
+     quick-release;
+ };
 
 / {
 
